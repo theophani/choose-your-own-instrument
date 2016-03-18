@@ -1,3 +1,72 @@
-body {
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body.sky {
+  background: linear-gradient(to bottom,  #87e0fd 0%,#05abe0 100%);
+}
+
+body.sea {
+  background: linear-gradient(to bottom,  #c9de96 0%,#8ab66b 44%,#398235 100%);
+}
+
+body.bubble-gum {
+  background: linear-gradient(to bottom, #fcecfc 0%,#fba6e1 37%,#fd89d7 60%,#ff7cd8 100%);
+}
+
+body.fireball {
+  background: linear-gradient(to bottom, #FFFF00 0%,#f85032 33%,#f02f17 55%, #ff0000 100%);
+}
+
+body.sunset {
+  background: linear-gradient(to bottom, #fcaa62 0%,#f85032 27%,#f02f17 44%,#c922c6 100%);
+}
+
+body.cool-mint {
+  background: linear-gradient(to bottom, #d2ff52 0%,#91e842 28%,#383cc1 100%);
+}
+
+body.fuji {
+  background: linear-gradient(to bottom, #ededed 0%,#c85ec7 47%,#a849a3 100%);
+}
+
+.shape {
+  width: 100px;
+  height: 100px;
   background-color: blue;
+  margin: 20px;
+  float: left;
+  cursor: pointer;
+}
+
+.shape.square {
+  /*  */
+}
+
+.shape:hover {
+  background-color: #05ABE0;
+}
+
+.shape.triangle {
+  background-color: transparent;
+  width: 0px;
+  height: 0px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid yellow;
+}
+
+.shape.triangle:hover {
+  border-bottom-color: gold;
+}
+
+.shape.circle {
+  border-radius: 200px;
+  background-color: red;
+}
+
+.shape.circle:hover {
+  background-color: orange;
 }

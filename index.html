@@ -3,10 +3,83 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script>
+      function playTone (tone) {
+        return function (e) {
+          tones.play(tone.note, tone.octave);
+        }
+      }
+
+      function makeKey (shape, tone, listenerType) {
+        var elem = document.createElement("div");
+        elem.className = "shape " + shape;
+        elem.addEventListener(listenerType, playTone(tone));
+        return elem;
+      }
+
+      function nextShape (i, pattern) {
+        if (pattern === "same") {
+          return shapes[shapeStartingIndex];
+        }
+        if (pattern === "random") {
+          return shapes[Math.floor(Math.random() * shapes.length)];
+        }
+        if (pattern === "sequence") {
+          return shapes[(shapeStartingIndex + i) % shapes.length];
+        }
+      }
+
+      function nextTone (i, notes, startingOctave) {
+        var nextNote = notes[i % notes.length];
+        // hrmm. this seems is wrong. I think is matters what the starting note is ...
+        var nextOctave = Math.floor(i / notes.length) + startingOctave;
+
+        return {
+          note: nextNote,
+          octave: nextOctave
+        }
+      }
+
+      var backgrounds = ["sky", "sea", "bubble-gum", "fireball", "sunset", "fuji"];
+      var autoSelectedBackgroundIndex = Math.floor(Math.random() * backgrounds.length);
+      var autoSelectedBackground = backgrounds[autoSelectedBackgroundIndex];
+
+      var shapes = ["triangle", "circle", "square"];
+      var shapeStartingIndex = Math.floor(Math.random() * shapes.length);
+
+      var patterns = ["same", "random", "sequence"];
+      var autoSelectedPatternIndex = Math.floor(Math.random() * patterns.length);
+      var autoSelectedPattern = patterns[autoSelectedPatternIndex];
+
+      var autoSelectedNumberOfKeys = Math.ceil(Math.random() * 20);
+
+    </script>
     <title>Choose Your Own Instrument</title>
   </head>
   <body>
   </body>
   <script>
+
+    var background = autoSelectedBackground;
+    var pattern = autoSelectedPattern;
+    var numberOfKeys = autoSelectedNumberOfKeys;
+
+    var notes = ["c", "d", "e", "f", "g", "a", "b"];
+    var startingOctave = 4;
+
+    var shape, tone, key;
+    var eventType = "mouseover";
+    var keys = [];
+
+    document.querySelector("body").className = background;
+
+    for (var i = 0; i < numberOfKeys; i++) {
+      shape = nextShape(i, pattern);
+      tone = nextTone(i, notes, startingOctave);
+      key = makeKey(shape, tone, eventType);
+      document.body.appendChild(key);
+    }
+
   </script>
 </html>
