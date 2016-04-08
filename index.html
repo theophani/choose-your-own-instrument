@@ -29,9 +29,20 @@
 
     document.querySelector("body").className = "sky";
 
-    addKey ("circle", { note: "c", octave: 4 }, "mouseover");
-    addKey ("triangle", { note: "d", octave: 4 }, "mouseover");
-    addKey ("square", { note: "f", octave: 4 }, "mouseover");
+    var circle = document.createElement("div");
+    circle.className = "shape circle";
+    circle.addEventListener("mouseover", playTone({ note: "c", octave: 4 }));
+    document.body.appendChild(circle);
+
+    var triangle = document.createElement("div");
+    triangle.className = "shape triangle";
+    triangle.addEventListener("mouseover", playTone({ note: "d", octave: 4 }));
+    document.body.appendChild(triangle);
+
+    var square = document.createElement("div");
+    square.className = "shape square";
+    square.addEventListener("mouseover", playTone({ note: "e", octave: 4 }));
+    document.body.appendChild(square);
 
   </script>
 </html>
