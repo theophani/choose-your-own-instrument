@@ -5,16 +5,11 @@
     <link rel="stylesheet" href="styles.css">
     <script src="tones.js"></script>
     <script>
-      function playTone (tone) {
-        return function (e) {
-          tones.play(tone.note, tone.octave);
-        }
-      }
-
-      function addKey (shape, tone, listenerType) {
+      function addKey (shape, note, octave, listenerType) {
         var element = document.createElement("div");
+        element.playTone = function (e) { tones.play(note, octave) };
         element.className = "shape " + shape;
-        element.addEventListener(listenerType, playTone(tone));
+        element.addEventListener(listenerType, element.playTone);
         document.body.appendChild(element);
       }
     </script>
@@ -30,18 +25,21 @@
     document.querySelector("body").className = "sky";
 
     var circle = document.createElement("div");
+    circle.playTone = function (e) { tones.play("c", 4) };
     circle.className = "shape circle";
-    circle.addEventListener("mouseover", playTone({ note: "c", octave: 4 }));
+    circle.addEventListener("mouseover", circle.playTone);
     document.body.appendChild(circle);
 
     var triangle = document.createElement("div");
+    triangle.playTone = function (e) { tones.play("d", 4) };
     triangle.className = "shape triangle";
-    triangle.addEventListener("mouseover", playTone({ note: "d", octave: 4 }));
+    triangle.addEventListener("mouseover", triangle.playTone);
     document.body.appendChild(triangle);
 
     var square = document.createElement("div");
+    square.playTone = function (e) { tones.play("e", 4) };
     square.className = "shape square";
-    square.addEventListener("mouseover", playTone({ note: "e", octave: 4 }));
+    square.addEventListener("mouseover", square.playTone);
     document.body.appendChild(square);
 
   </script>
