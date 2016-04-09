@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="styles.css">
     <script src="tones.js"></script>
     <script>
+
+      var timeouts = [];
+
       function addShape (shape, note, octave, listenerType) {
         var element = document.createElement("div");
         element.playTone = function (e) { tones.play(note, octave) };
@@ -12,6 +15,41 @@
         element.addEventListener(listenerType, element.playTone);
         document.body.appendChild(element);
       }
+
+      function playOneElement (element, delay) {
+        return function () {
+          element.className = element.className.replace("shape", "auto-playing shape");
+          element.playTone();
+          setTimeout(function () {
+            element.className = element.className.replace("auto-playing shape", "shape");
+          }, delay);
+        }
+      }
+
+      function autoPlayAll (delay) {
+        var shapes = document.querySelectorAll('.shape');
+        for (var i = 0; i < shapes.length; i++) {
+          timeouts.push(setTimeout(playOneElement(shapes[i], delay), delay * i));
+        }
+        timeouts.push(setTimeout(function () { autoPlayAll(delay) }, delay * shapes.length));
+      }
+
+      function clearAllTimeouts () {
+        timeouts.forEach(function(timeout) {
+          clearTimeout(timeout)
+        });
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.code === "Space") {
+          autoPlayAll(200);
+        }
+
+        if (e.code === "Escape") {
+          clearAllTimeouts();
+        }
+      });
+
     </script>
     <title>Choose Your Own Instrument</title>
   </head>
