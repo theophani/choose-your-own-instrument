@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="tones.js"></script>
     <script>
-      function addKey (shape, note, octave, listenerType) {
+      function addShape (shape, note, octave, listenerType) {
         var element = document.createElement("div");
         element.playTone = function (e) { tones.play(note, octave) };
         element.className = "shape " + shape;
