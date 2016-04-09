@@ -34,7 +34,7 @@
         timeouts.push(setTimeout(function () { autoPlayAll(delay) }, delay * shapes.length));
       }
 
-      function clearAllTimeouts () {
+      function clearAllAutoPlayTimeouts () {
         timeouts.forEach(function(timeout) {
           clearTimeout(timeout)
         });
@@ -46,7 +46,7 @@
         }
 
         if (e.code === "Escape") {
-          clearAllTimeouts();
+          clearAllAutoPlayTimeouts();
         }
       });
 
