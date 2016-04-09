@@ -26,12 +26,18 @@
         }
       }
 
+      function playAllAgain (delay) {
+        return function () {
+          autoPlayAll(delay);
+        }
+      }
+
       function autoPlayAll (delay) {
         var shapes = document.querySelectorAll('.shape');
         for (var i = 0; i < shapes.length; i++) {
           timeouts.push(setTimeout(playOneElement(shapes[i], delay), delay * i));
         }
-        timeouts.push(setTimeout(function () { autoPlayAll(delay) }, delay * shapes.length));
+        timeouts.push(setTimeout(playAllAgain(delay), delay * shapes.length));
       }
 
       function clearAllAutoPlayTimeouts () {
