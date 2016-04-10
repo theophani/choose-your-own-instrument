@@ -6,8 +6,6 @@
     <script src="tones.js"></script>
     <script>
 
-      var timeouts = [];
-
       function addShape (shape, note, octave, listenerType) {
         var element = document.createElement("div");
         element.playTone = function (e) { tones.play(note, octave) };
@@ -16,43 +14,56 @@
         document.body.appendChild(element);
       }
 
-      function playOneElement (element, delay) {
-        return function () {
+      function playOneElement (element, delay, i) {
+        function play () {
           element.className = element.className.replace("shape", "auto-playing shape");
           element.playTone();
           setTimeout(function () {
             element.className = element.className.replace("auto-playing shape", "shape");
           }, delay);
         }
+
+        setTimeout(play, delay * i);
       }
 
-      function playAllAgain (delay) {
-        return function () {
+      function playAllAgain (delay, numberOfShapes) {
+        function loop () {
           autoPlayAll(delay);
         }
+
+        setTimeout(loop, delay * numberOfShapes);
       }
 
       function autoPlayAll (delay) {
         var shapes = document.querySelectorAll('.shape');
         for (var i = 0; i < shapes.length; i++) {
-          timeouts.push(setTimeout(playOneElement(shapes[i], delay), delay * i));
+          playOneElement(shapes[i], delay, i);
         }
-        timeouts.push(setTimeout(playAllAgain(delay), delay * shapes.length));
+        playAllAgain(delay, shapes.length);
       }
 
-      function clearAllAutoPlayTimeouts () {
-        timeouts.forEach(function(timeout) {
-          clearTimeout(timeout)
-        });
+      function clearAllTimeouts () {
+        var nextTimeout = setTimeout(function(){}, 0);
+        for (var i = 1; i < nextTimeout; i++) {
+          clearTimeout(i);
+        }
+      }
+
+      function resetShapeClassNames () {
+        var shapes = document.querySelectorAll('.shape');
+        for (var j = 0; j < shapes.length; j++) {
+          shapes[j].className = shapes[j].className.replace("auto-playing ", "");
+        }
       }
 
       document.addEventListener("keydown", function (e) {
         if (e.code === "Space") {
-          autoPlayAll(200);
+          autoPlayAll(500);
         }
 
         if (e.code === "Escape") {
-          clearAllAutoPlayTimeouts();
+          clearAllTimeouts();
+          resetShapeClassNames();
         }
       });
 
