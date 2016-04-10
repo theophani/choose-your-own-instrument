@@ -44,6 +44,17 @@
         resetClassNames();
       }
 
+      /**
+       * To cancel a timeout, you execute the `clearTimeout` function with the
+       * id (which is a number) of the timeout.
+       * When you create a timeout (including intervals, which are a special
+       * kind of timeout), it returns its id, which is always one number higher
+       * than the previous one, starting with the number 1.
+       * Therefore, if you want to clear all timeouts, you can create a new
+       * timeout, capture its id, and then clear all the timeouts starting from
+       * 1 up to and including the timeout you created. This will also “clear”
+       * timeouts that are already over, which is does not throw an error.
+       */
       function clearAllTimeouts () {
         var nextTimeout = setTimeout(function(){}, 0);
         for (var i = 1; i <= nextTimeout; i++) {
