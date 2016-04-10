@@ -39,8 +39,8 @@ body.fuji {
   margin: 30px;
   display: inline-block;
   cursor: pointer;
-  background-color: black;
   border-bottom-width: 0;
+  background-color: black;
   border-bottom-color: black;
 }
 
