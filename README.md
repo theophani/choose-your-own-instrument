@@ -18,7 +18,7 @@ git clone git@github.com:theophani/choose-your-own-instrument.git
 
 ## Play around to see how things work!
 
-Open index.html in a code editor and look at lines 95 to 111.
+Open index.html in a code editor and look at lines 89 to 111.
 
 Change a few things to see how it all works. Here are some ideas:
 
