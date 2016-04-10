@@ -2,6 +2,8 @@
 
 A playground for learning programming basics while making an instrument
 
+The static version is here: http://theophani.github.io/choose-your-own-instrument/
+
 ## Get your own copy to play with
 
 If you don’t have `git` or don’t want to use it:
