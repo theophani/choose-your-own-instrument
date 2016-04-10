@@ -14,7 +14,7 @@
         document.body.appendChild(element);
       }
 
-      function playOneElement (element, delay, i) {
+      function playOne (element, delay, i) {
         function play () {
           element.className = element.className + " auto-playing";
           element.playTone();
@@ -27,14 +27,16 @@
       }
 
       function autoPlayAll (delay) {
-        var shapes = document.querySelectorAll('.shape');
-        for (var i = 0; i < shapes.length; i++) {
-          playOneElement(shapes[i], delay, i);
+        var elements = document.querySelectorAll('.shape');
+
+        function playAll () {
+          for (var i = 0; i < elements.length; i++) {
+            playOne(elements[i], delay, i);
+          }
         }
 
-        setTimeout(function loop () {
-          autoPlayAll(delay);
-        }, delay * shapes.length);
+        playAll();
+        setInterval(playAll, delay * elements.length);
       }
 
       function stopAutoPlayback () {
