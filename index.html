@@ -86,26 +86,26 @@
   </body>
   <script>
 
-    // background: "sky", "sea", "bubble-gum", "fireball", "sunset", "fuji"
+    // backgrounds: "sky", "sea", "bubble-gum", "fireball", "sunset", "fuji"
     // shapes: "triangle", "circle", "square"
 
     document.querySelector("body").className = "sky";
 
     var circle = document.createElement("div");
     circle.playTone = function (e) { tones.play("c", 4) };
-    circle.className = "shape circle";
+    circle.className = "shape circle red";
     circle.addEventListener("mouseover", circle.playTone);
     document.body.appendChild(circle);
 
     var triangle = document.createElement("div");
     triangle.playTone = function (e) { tones.play("d", 4) };
-    triangle.className = "shape triangle";
+    triangle.className = "shape triangle yellow";
     triangle.addEventListener("mouseover", triangle.playTone);
     document.body.appendChild(triangle);
 
     var square = document.createElement("div");
     square.playTone = function (e) { tones.play("e", 4) };
-    square.className = "shape square";
+    square.className = "shape square blue";
     square.addEventListener("mouseover", square.playTone);
     document.body.appendChild(square);
 

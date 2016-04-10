@@ -39,34 +39,43 @@ body.fuji {
   margin: 30px;
   display: inline-block;
   cursor: pointer;
-}
-
-.shape.square {
-  background-color: blue;
+  background-color: black;
+  border-bottom-width: 0;
+  border-bottom-color: black;
 }
 
 .shape:hover, .shape.auto-playing {
   background-color: white;
+  border-bottom-color: white;
 }
 
-.shape.triangle {
-  background-color: transparent;
+.circle {
+  border-radius: 200px;
+}
+
+.triangle {
+  /* !important is need to avoid needing a special hover class */
+  background-color: transparent !important;
   width: 0px;
   height: 0px;
   border-left: 75px solid transparent;
   border-right: 75px solid transparent;
-  border-bottom: 150px solid yellow;
+  border-bottom-width: 150px;
+  border-bottom-style: solid;
 }
 
-.shape.triangle:hover, .shape.triangle.auto-playing {
-  border-bottom-color: white;
-}
-
-.shape.circle {
-  border-radius: 200px;
+.red {
   background-color: red;
+  border-bottom-color: red;
 }
 
-.shape.circle:hover, .shape.circle.auto-playing {
-  background-color: white;
+.yellow {
+  background-color: yellow;
+  border-bottom-color: yellow;
 }
+
+.blue {
+  background-color: blue;
+  border-bottom-color: blue;
+}
+
