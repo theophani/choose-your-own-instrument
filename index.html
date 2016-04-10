@@ -8,8 +8,8 @@
 
       function addShape (shape, color, note, octave, listenerType) {
         var element = document.createElement("div");
-        element.playTone = function (e) { tones.play(note, octave) };
         element.className = "shape " + shape + " " + color;
+        element.playTone = function (e) { tones.play(note, octave) };
         element.addEventListener(listenerType, element.playTone);
         document.body.appendChild(element);
       }
@@ -93,20 +93,20 @@
     document.body.className = "sky";
 
     var circle = document.createElement("div");
-    circle.playTone = function (e) { tones.play("c", 4) };
     circle.className = "shape circle red";
+    circle.playTone = function (e) { tones.play("c", 4) };
     circle.addEventListener("mouseover", circle.playTone);
     document.body.appendChild(circle);
 
     var triangle = document.createElement("div");
-    triangle.playTone = function (e) { tones.play("d", 4) };
     triangle.className = "shape triangle yellow";
+    triangle.playTone = function (e) { tones.play("d", 4) };
     triangle.addEventListener("mouseover", triangle.playTone);
     document.body.appendChild(triangle);
 
     var square = document.createElement("div");
-    square.playTone = function (e) { tones.play("e", 4) };
     square.className = "shape square blue";
+    square.playTone = function (e) { tones.play("e", 4) };
     square.addEventListener("mouseover", square.playTone);
     document.body.appendChild(square);
 
