@@ -40,7 +40,7 @@
 
       function clearAllTimeouts () {
         var nextTimeout = setTimeout(function(){}, 0);
-        for (var i = 1; i < nextTimeout; i++) {
+        for (var i = 1; i <= nextTimeout; i++) {
           clearTimeout(i);
         }
       }
