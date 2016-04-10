@@ -79,3 +79,22 @@ body.fuji {
   border-bottom-color: blue;
 }
 
+.orange {
+  background-color: orange;
+  border-bottom-color: orange;
+}
+
+.green {
+  background-color: green;
+  border-bottom-color: green;
+}
+
+.purple {
+  background-color: purple;
+  border-bottom-color: purple;
+}
+
+.pink {
+  background-color: pink;
+  border-bottom-color: pink;
+}
