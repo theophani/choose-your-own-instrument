@@ -16,10 +16,10 @@
 
       function playOneElement (element, delay, i) {
         function play () {
-          element.className = element.className.replace("shape", "auto-playing shape");
+          element.className = element.className + " auto-playing";
           element.playTone();
           setTimeout(function () {
-            element.className = element.className.replace("auto-playing shape", "shape");
+            element.className = element.className.replace(" auto-playing", "");
           }, delay);
         }
 
@@ -48,7 +48,7 @@
       function resetShapeClassNames () {
         var shapes = document.querySelectorAll('.shape');
         for (var j = 0; j < shapes.length; j++) {
-          shapes[j].className = shapes[j].className.replace("auto-playing ", "");
+          shapes[j].className = shapes[j].className.replace(" auto-playing", "");
         }
       }
 
