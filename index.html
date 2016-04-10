@@ -6,10 +6,10 @@
     <script src="tones.js"></script>
     <script>
 
-      function addShape (shape, note, octave, listenerType) {
+      function addShape (shape, color, note, octave, listenerType) {
         var element = document.createElement("div");
         element.playTone = function (e) { tones.play(note, octave) };
-        element.className = "shape " + shape;
+        element.className = "shape " + shape + " " + color;
         element.addEventListener(listenerType, element.playTone);
         document.body.appendChild(element);
       }
