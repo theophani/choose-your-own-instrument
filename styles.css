@@ -47,7 +47,7 @@ body.fuji {
 }
 
 .shape:hover, .shape.auto-playing {
-  background-color: #05ABE0;
+  background-color: white;
 }
 
 .shape.triangle {
@@ -60,7 +60,7 @@ body.fuji {
 }
 
 .shape.triangle:hover, .shape.triangle.auto-playing {
-  border-bottom-color: gold;
+  border-bottom-color: white;
 }
 
 .shape.circle {
@@ -69,5 +69,5 @@ body.fuji {
 }
 
 .shape.circle:hover, .shape.circle.auto-playing {
-  background-color: orange;
+  background-color: white;
 }
