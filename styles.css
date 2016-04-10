@@ -36,14 +36,13 @@ body.fuji {
 .shape {
   width: 150px;
   height: 150px;
-  background-color: blue;
   margin: 30px;
   display: inline-block;
   cursor: pointer;
 }
 
 .shape.square {
-  /*  */
+  background-color: blue;
 }
 
 .shape:hover, .shape.auto-playing {
