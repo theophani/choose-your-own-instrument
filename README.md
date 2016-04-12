@@ -58,3 +58,6 @@ Change a few things to see how it all works. Here are some ideas:
 
 2. Remove all the code that draws shapes, and create 10 purple circles using the `addShape` function instead.
 
+## The tones library
+
+The tones library is by bit101: https://github.com/bit101/tones
