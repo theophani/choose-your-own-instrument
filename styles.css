@@ -33,7 +33,7 @@ body.fuji {
   background: linear-gradient(to bottom, #ededed 0%,#c85ec7 47%,#a849a3 100%);
 }
 
-.shape {
+div {
   width: 150px;
   height: 150px;
   margin: 30px;
@@ -44,7 +44,7 @@ body.fuji {
   border-bottom-color: black;
 }
 
-.shape:hover, .shape.auto-playing {
+div:hover, div.auto-playing {
   background-color: white;
   border-bottom-color: white;
 }
