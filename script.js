@@ -2,6 +2,13 @@ function playTone (note) {
   tones.play(note);
 }
 
+function toneFromNumber (i) {
+  var BASE_CHAR = 97;
+  var firstNote = "c";
+  var tone = String.fromCharCode((firstNote.charCodeAt(0) + i - BASE_CHAR) % 7 + BASE_CHAR);
+  return tone;
+}
+
 function playOne (element, delay, i) {
   function play () {
     element.className = element.className + " auto-playing";
