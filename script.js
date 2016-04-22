@@ -9,6 +9,10 @@ function toneFromNumber (i) {
   return tone;
 }
 
+function randomTone () {
+  return (20 * Math.round(Math.random(0, 100) * 100));
+}
+
 function playOne (element, delay, i) {
   function play () {
     element.className = element.className + " auto-playing";
