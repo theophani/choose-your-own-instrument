@@ -88,6 +88,18 @@ function toneFromNumber (i) {
   return tone;
 }
 
+function randomShape () {
+  var shapes = ["triangle", "circle", "square", "diamond"];
+  var i = Math.floor(Math.random() * shapes.length);
+  return shapes[i];
+}
+
+function randomColor () {
+  var colors = ["red", "yellow", "blue", "orange", "green", "purple", "pink", "black"];
+  var i = Math.floor(Math.random() * colors.length);
+  return colors[i];
+}
+
 function randomTone () {
   return (Math.round(Math.random() * 100 * 15) + 15);
 }
