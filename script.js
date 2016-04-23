@@ -2,17 +2,6 @@ function playTone (note) {
   tones.play(note);
 }
 
-function toneFromNumber (i) {
-  var BASE_CHAR = 97;
-  var firstNote = "c";
-  var tone = String.fromCharCode((firstNote.charCodeAt(0) + i - BASE_CHAR) % 7 + BASE_CHAR);
-  return tone;
-}
-
-function randomTone () {
-  return (20 * Math.round(Math.random(0, 100) * 100));
-}
-
 function playOne (element, delay, i) {
   function play () {
     element.className = element.className + " auto-playing";
@@ -78,6 +67,8 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+/* Special features */
+
 // The “type” determines the shape of the sound wave.
 // The available types are: "sine", "square", "sawtooth", "triangle"
 tones.type = "sine"
@@ -90,5 +81,13 @@ tones.attack = 1
 // Try other numbers to see how it creates clipped or echoey sounds.
 tones.release = 100
 
+function toneFromNumber (i) {
+  var BASE_CHAR = 97;
+  var firstNote = "c";
+  var tone = String.fromCharCode((firstNote.charCodeAt(0) + i - BASE_CHAR) % 7 + BASE_CHAR);
+  return tone;
+}
 
-
+function randomTone () {
+  return (Math.round(Math.random() * 100 * 15) + 15);
+}
