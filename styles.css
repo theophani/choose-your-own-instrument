@@ -64,6 +64,10 @@ div:hover, div.auto-playing {
   border-bottom-style: solid;
 }
 
+.diamond {
+  transform: rotate(45deg) scale(0.8) skew(10deg, 10deg) translate(15px, 15px);
+}
+
 .red {
   background-color: red;
   border-bottom-color: red;
