@@ -81,25 +81,44 @@ tones.attack = 1
 // Try other numbers to see how it creates clipped or echoey sounds.
 tones.release = 100
 
-function toneFromNumber (i) {
-  var BASE_CHAR = 97;
-  var firstNote = "c";
-  var tone = String.fromCharCode((firstNote.charCodeAt(0) + i - BASE_CHAR) % 7 + BASE_CHAR);
-  return tone;
+// Given an integer from 0 though 7, it returns a note on the C Major scale,
+// starting from c: "c", "d", "e", "f", "g", "a", "b".
+// For integers from -28 though -1 and 8 through 41,
+// it returns a frequency in Hz.
+function noteFromNumber (i) {
+  var centerOctave = 4;
+  var notes = ["c", "d", "e", "f", "g", "a", "b"];
+  var notesPerOctave = notes.length;
+
+  var j = i + (notesPerOctave * centerOctave);
+  var octave = Math.floor(j / notesPerOctave);
+  var note = notes[j % notesPerOctave];
+
+  // Only octaves 0 through 9 are supported
+  if (octave < 0 || octave > 9) {
+    throw "The number " + i + " is outside of the supported range of the noteFromNumber function";
+  } else if (octave === 4) {
+    return note;
+  } else {
+    return tones.map[octave][note];
+  }
 }
 
+// Returns a random shape: "triangle", "circle", "square", "diamond"
 function randomShape () {
   var shapes = ["triangle", "circle", "square", "diamond"];
   var i = Math.floor(Math.random() * shapes.length);
   return shapes[i];
 }
 
+// Returns a random color: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
 function randomColor () {
   var colors = ["red", "yellow", "blue", "orange", "green", "purple", "pink", "black"];
   var i = Math.floor(Math.random() * colors.length);
   return colors[i];
 }
 
-function randomTone () {
-  return (Math.round(Math.random() * 100 * 15) + 15);
+// Returns a completely random note as a frequency from 65 to 2065 Hz
+function randomNote () {
+  return (Math.round(Math.random() * 100 * 20) + 65);
 }
