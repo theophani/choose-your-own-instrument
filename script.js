@@ -85,10 +85,8 @@ tones.attack = 1
 // Try other numbers to see how it creates clipped or echoey sounds.
 tones.release = 100
 
-// Given an integer from 0 though 7, it returns a note on the C Major scale,
-// starting from c: "c", "d", "e", "f", "g", "a", "b".
-// For integers from -28 though -1 and 8 through 41,
-// it returns a frequency in Hz.
+// Takes an integer and returns a note in Hz.
+// Integers 0 though 7 are the notes on the C Major scale.
 function noteFromNumber (i) {
   var centerOctave = 4;
   var notes = ["c", "d", "e", "f", "g", "a", "b"];
@@ -101,8 +99,6 @@ function noteFromNumber (i) {
   // Only octaves 0 through 9 are supported
   if (octave < 0 || octave > 9) {
     throw "The number " + i + " is outside of the supported range of the noteFromNumber function";
-  } else if (octave === 4) {
-    return note;
   } else {
     return tones.map[octave][note];
   }
