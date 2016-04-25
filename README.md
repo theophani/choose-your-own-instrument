@@ -18,45 +18,109 @@ git clone git@github.com:theophani/choose-your-own-instrument.git
 
 ## Play around to see how things work!
 
-Open index.html in a code editor and look at lines 105 to 123.
+### Options when creating figures.
 
-Change a few things to see how it all works. Here are some ideas:
+Available shapes:
+"triangle", "circle", "square", "diamond"
 
-1. Make the circle a different color. These are the color choices: red, yellow, blue, orange, green, purple, pink, black
+Available colors:
+"red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
 
-2. Change the yellow triangle to be a yellow square.
+Available notes:
+"c", "c#", "db", "d", "d#", "eb", "e", "f", "f#",
+"gb", "g", "g#", "ab", "a", "a#", "bb", "b"
 
-3. Make the blue square play an “f”. Try some other notes.
+Sharps are denoted with “#”, and flats are denoted with “b”.
 
-   You can also denote sharps with a “#” (e.g. d Sharp is “d#”) or flats with a “b” (e.g. E Flat is “eb”).
+### Change the background
 
-4. Find a line that looks something like this:
+On line 28, the background class is set. You can change the background to one of
+the available classes: "sky", "sea", "bubble-gum", "fireball", "sunset", "fuji"
 
-   ```
-   circle.playTone = function (e) { tones.play("c", 4) };
-   ```
+```javascript
+    document.body.className = "fuji"
+```
 
-   Find out what happens when you change the number `4` to a `5`. Do other numbers work?
+### Helper functions
 
-   Find out what happens when you change `tones.play("c", 4)` to just `tones.play("c")` (i.e. remove the comma and the number).
+Use the `randomShape` function to choose a random shape.
+Use it when adding a figure, like this:
 
-   Find out what happens when you replace the letter in quotes (e.g. `"c"`) with the number `880`. Do other numbers work?
+```javascript
+  addFigure(randomShape(), "orange", "e")
+```
 
-5. For one of the shapes, change `mouseover` to `click`. Reload the page, and try clicking on the shape.
+Use the `randomColor` function to choose a random color.
+Use it when adding a figure, like this:
 
-6. Add a fourth shape.
+```javascript
+  addFigure("circle", randomColor(), "g")
+```
 
-7. Have you tried changing the `className` of the `document.body` yet? (See on line 93)
+Use the `randomNote` function to choose a random note.
+Use it when adding a figure, like this:
 
-## Simplying the code by using functions
+```javascript
+  addFigure("diamond", "pink", randomNote())
+```
 
-1. Try adding this line of code:
+Use the `noteFromNumber` function to get the nth note in the C Major scale.
+Integers 0 though 7 are the notes "c" through "g".
+This is especially useful when adding a series of figures in a loop, like this:
 
-   ```
-   addShape("circle", "purple", "c", 4, "mouseover");
-   ```
+```javascript
+  for (var i = 0; i < 16; i++) {
+    addFigure("square", "black", noteFromNumber(i))
+  }
+```
 
-2. Remove all the code that draws shapes, and create 10 purple circles using the `addShape` function instead.
+You can use any integers from -28 to 41 (i.e. across 10 octaves).
+Try this:
+
+```javascript
+  for (var i = -28; i <= 41; i++) {
+    addFigure("diamond", "pink", noteFromNumber(i));
+  }
+```
+
+### Tempo
+
+To change the tempo of the auto playback, set the variable `bmp` to a number
+greater than 0. The default is 300 beats per minute.
+
+```javascript
+bpm = 300
+```
+
+### Change how the notes sound
+
+You can change how the notes sound by setting `tones.type`, `tones.attack`, and
+`tones.release`.
+
+The “type” determines the shape of the sound wave. The default is "sine".
+The available types are: "sine", "square", "sawtooth", "triangle"
+
+```javascript
+tones.type = "sine"
+```
+
+The “attack” determines how intensely the sound starts. The default is 1.
+Try other numbers to see how it smooths out the tone.
+
+```javascript
+tones.attack = 1
+```
+
+The “release” determines how quickly the sound fades out. The default is 100.
+Try other numbers to see how it creates clipped or echoey sounds.
+
+```javascript
+tones.release = 100
+```
+
+Note: When you set these values, they affect all future notes played. That means
+you can set these values in the console, as the auto playback is happening, and
+change how the notes sound on the fly. Ask a coach to help you!
 
 ## The tones library
 
