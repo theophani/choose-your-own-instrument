@@ -59,7 +59,7 @@ function stopAutoPlayback () {
 
 document.addEventListener("keydown", function (e) {
   if (e.code === "Space") {
-    autoPlayAll(200);
+    autoPlayAll(60 * 1000 / bpm);
   }
 
   if (e.code === "Escape") {
@@ -68,6 +68,10 @@ document.addEventListener("keydown", function (e) {
 });
 
 /* Special features */
+
+// bmp means “beats per minute”.
+// Sets the tempo of the autoplay.
+var bpm = 300;
 
 // The “type” determines the shape of the sound wave.
 // The available types are: "sine", "square", "sawtooth", "triangle"
