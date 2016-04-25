@@ -118,7 +118,17 @@ function randomColor () {
   return colors[i];
 }
 
-// Returns a completely random note as a frequency from 65 to 2065 Hz
+// Returns a random note from the audible range
 function randomNote () {
-  return (Math.round(Math.random() * 100 * 20) + 65);
+  var audibleOctives = tones.map.slice(2, 8);
+  var octaves = audibleOctives.map(function (octave) {
+    return Object.keys(octave).map(function (key) {
+      return octave[key];
+    });
+  });
+  var allNotes = octaves.reduce(function (notes, notesInOctave) {
+    return notes.concat(notesInOctave);
+  }, []);
+
+  return allNotes[Math.floor(Math.random() * allNotes.length)];
 }
