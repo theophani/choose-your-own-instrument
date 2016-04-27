@@ -18,7 +18,9 @@ git clone git@github.com:theophani/choose-your-own-instrument.git
 
 ## Play around to see how things work!
 
-### Options when creating figures.
+### Options when creating figures
+
+(Tipps auf Deutsch: https://gist.github.com/matthiasr/95bc945d1e5fc52e1b5102de0f77c21b) 
 
 Available shapes:
 "triangle", "circle", "square", "diamond"
