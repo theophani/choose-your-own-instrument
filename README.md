@@ -85,7 +85,7 @@ Try this:
 
 ### Tempo
 
-To change the tempo of the auto playback, set the variable `bmp` to a number
+To change the tempo of the auto playback, set the variable `bpm` to a number
 greater than 0. The default is 300 beats per minute.
 
 ```javascript
