@@ -39,66 +39,52 @@ div {
   margin: 30px;
   display: inline-block;
   cursor: pointer;
-  border-bottom-width: 0;
   background-color: black;
-  border-bottom-color: black;
 }
 
 div:hover, div.auto-playing {
   background-color: white;
-  border-bottom-color: white;
 }
 
 .circle {
-  border-radius: 200px;
+  clip-path: circle(50% at 50% 50%);
 }
 
 .triangle {
-  /* !important is need to avoid needing a special hover class */
-  background-color: transparent !important;
-  width: 0px;
-  height: 0px;
-  border-left: 75px solid transparent;
-  border-right: 75px solid transparent;
-  border-bottom-width: 150px;
-  border-bottom-style: solid;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
 .diamond {
-  transform: rotate(45deg) scale(0.8) skew(10deg, 10deg) translate(15px, 15px);
+  clip-path: polygon(50% 0%, 85% 50%, 50% 100%, 15% 50%);
+  height: 200px;
+  width: 200px;
+  margin: 0 5px;
 }
 
 .red {
   background-color: red;
-  border-bottom-color: red;
 }
 
 .yellow {
   background-color: yellow;
-  border-bottom-color: yellow;
 }
 
 .blue {
   background-color: blue;
-  border-bottom-color: blue;
 }
 
 .orange {
   background-color: orange;
-  border-bottom-color: orange;
 }
 
 .green {
   background-color: green;
-  border-bottom-color: green;
 }
 
 .purple {
   background-color: purple;
-  border-bottom-color: purple;
 }
 
 .pink {
   background-color: pink;
-  border-bottom-color: pink;
 }
