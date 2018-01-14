@@ -33,6 +33,14 @@ html, body {
   background: linear-gradient(to bottom, #ededed 0%, #c85ec7 47%, #a849a3 100%);
 }
 
+.rainbow {
+  background: linear-gradient(to bottom, red 0%, orange 20%, yellow 40%, green 60%, blue 80%, purple 100%);
+}
+
+.sideways-rainbow {
+  background: linear-gradient(to right, red 0%, orange 20%, yellow 40%, green 60%, blue 80%, purple 100%);
+}
+
 div {
   width: 150px;
   height: 150px;
