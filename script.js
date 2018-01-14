@@ -104,9 +104,9 @@ function noteFromNumber (i) {
   }
 }
 
-// Returns a random shape: "triangle", "circle", "square", "diamond"
+// Returns a random shape: "triangle", "circle", "square", "diamond", "star"
 function randomShape () {
-  var shapes = ["triangle", "circle", "square", "diamond"];
+  var shapes = ["triangle", "circle", "square", "diamond", "star"];
   var i = Math.floor(Math.random() * shapes.length);
   return shapes[i];
 }
