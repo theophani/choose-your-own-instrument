@@ -5,6 +5,42 @@ html, body {
   text-align: center;
 }
 
+div {
+  width: 150px;
+  height: 150px;
+  margin: 30px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: black;
+}
+
+div:hover, div.auto-playing {
+  background-color: white;
+}
+
+/* Shapes */
+
+.circle {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.diamond {
+  clip-path: polygon(50% 0%, 85% 50%, 50% 100%, 15% 50%);
+  height: 200px;
+  width: 200px;
+  margin: 0 5px;
+}
+
+.star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Backgrounds */
+
 .sky {
   background: linear-gradient(to bottom,  #87e0fd 0%, #05abe0 100%);
 }
@@ -41,37 +77,7 @@ html, body {
   background: linear-gradient(to right, red 0%, orange 20%, yellow 40%, green 60%, blue 80%, purple 100%);
 }
 
-div {
-  width: 150px;
-  height: 150px;
-  margin: 30px;
-  display: inline-block;
-  cursor: pointer;
-  background-color: black;
-}
-
-div:hover, div.auto-playing {
-  background-color: white;
-}
-
-.circle {
-  clip-path: circle(50% at 50% 50%);
-}
-
-.triangle {
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-.diamond {
-  clip-path: polygon(50% 0%, 85% 50%, 50% 100%, 15% 50%);
-  height: 200px;
-  width: 200px;
-  margin: 0 5px;
-}
-
-.star {
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-}
+/* Background colours */
 
 .red {
   background-color: red;
