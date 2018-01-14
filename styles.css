@@ -12,6 +12,7 @@ div {
   display: inline-block;
   cursor: pointer;
   background-color: black;
+  background-size: cover;
 }
 
 div:hover, div.auto-playing {
