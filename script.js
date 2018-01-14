@@ -1,5 +1,5 @@
-function playTone (note) {
-  tones.play(note);
+function playTone (note, octave) {
+  tones.play(note, octave);
 }
 
 function playOne (element, delay, i) {
