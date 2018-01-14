@@ -37,7 +37,7 @@ Sharps are denoted with “#”, and flats are denoted with “b”.
 ### Change the background
 
 On line 28, the background class is set. You can change the background to one of
-the available classes: "sky", "sea", "bubble-gum", "fireball", "sunset", "fuji"
+the available classes: "sky", "sea", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
 
 ```javascript
     document.body.className = "fuji"
