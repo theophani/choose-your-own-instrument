@@ -124,6 +124,17 @@ Note: When you set these values, they affect all future notes played. That means
 you can set these values in the console, as the auto playback is happening, and
 change how the notes sound on the fly. Ask a coach to help you!
 
+### Change how figures look
+
+Try this:
+
+```javascript
+myFigure = addFigure("star", "yellow", randomNote())
+myFigure.style.backgroundImage = "url('http://theophani.github.io/choose-your-own-instrument/swiss-cheese.jpg')"
+myFigure.style.width = "500px"
+myFigure.style.height = "500px"
+```
+
 ## The tones library
 
 The tones library is by bit101: https://github.com/bit101/tones
