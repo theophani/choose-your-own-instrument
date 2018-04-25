@@ -1,6 +1,6 @@
 ### Möglichkeiten um Figuren zu machen
 
-Formen: "triangle" (Dreieck), "circle" (Kreis), "square" (Quadrat), "diamond" (Diamant)
+Formen: "triangle" (Dreieck), "circle" (Kreis), "square" (Quadrat), "diamond" (Diamant), "star" (Stern)
 
 Farben: "red" (Rot), "yellow" (Gelb), "blue" (Blau), "orange" (Orange), "green" (Grün), "purple" (Lila), "pink" (Rosa), "black" (Schwarz)
 
@@ -10,7 +10,7 @@ Erniedrigte Töne werden mit "b" angegeben, erhöhte Töne mit "#". Die Notenbez
 
 ### Hintergrund ändern
 
-In Zeile 28 wird die Hintergrund-Klasse gesetzt. Du kannst den Hintergrund zu einer der verfügbaren Klassen ändern: "sky" (Himmel), "sea" (Meer), "bubble-gum" (Kaugummi), "fireball" (Feuerball), "sunset" (Sonnenuntergang), "fuji" (Vulkan).
+In Zeile 28 wird die Hintergrund-Klasse gesetzt. Du kannst den Hintergrund zu einer der verfügbaren Klassen ändern: "sky" (Himmel), "sea" (Meer), "bubble-gum" (Kaugummi), "fireball" (Feuerball), "sunset" (Sonnenuntergang), ""cool-mint" (Frische Minze), "fuji" (Vulkan).
 
 ```javascript
     document.body.className = "fuji"
