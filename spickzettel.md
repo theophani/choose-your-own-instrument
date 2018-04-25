@@ -6,7 +6,7 @@ Farben: "red" (Rot), "yellow" (Gelb), "blue" (Blau), "orange" (Orange), "green" 
 
 Musiknoten:  "c" (C), "c#" (Cis), "db" (Des), "d" (D), "d#" (Dis), "eb" (Es), "e" (E), "f" (F), "f#" (Fis), "gb" (Ges), "g" (G), "g#" (Gis), "ab" (As), "a" (A), "a#" (B), "bb" (B), "b" (H)
 
-Erniedrigte Töne werden mit "b" angegeben, erhöhte Töne mit "#". Die Notenbezeichnungen sind Englisch, also Vorsicht mit H und B! (Wenn ihr ein H wollt, muesst ihr B angeben.)
+Erniedrigte Töne werden mit "b" angegeben, erhöhte Töne mit "#". Die Notenbezeichnungen sind Englisch, also Vorsicht mit H und B! (Wenn ihr ein H wollt, muesst ihr "b" angeben. Wenn ihr ein B wollt, muesst ihr "a#" oder "bb" angeben. )
 
 ### Hintergrund ändern
 
