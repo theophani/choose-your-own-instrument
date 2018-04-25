@@ -10,7 +10,7 @@ Erniedrigte Töne werden mit "b" angegeben, erhöhte Töne mit "#". Die Notenbez
 
 ### Hintergrund ändern
 
-In Zeile 28 wird die Hintergrund-Klasse gesetzt. Du kannst den Hintergrund zu einer der verfügbaren Klassen ändern: "sky" (Himmel), "sea" (Meer), "bubble-gum" (Kaugummi), "fireball" (Feuerball), "sunset" (Sonnenuntergang), ""cool-mint" (Frische Minze), "fuji" (Vulkan).
+In Zeile 29 wird die Hintergrund-Klasse gesetzt. Du kannst den Hintergrund zu einer der verfügbaren Klassen ändern: "sky" (Himmel), "sea" (Meer), "bubble-gum" (Kaugummi), "fireball" (Feuerball), "sunset" (Sonnenuntergang), ""cool-mint" (Frische Minze), "fuji" (Vulkan).
 
 ```javascript
     document.body.className = "fuji"
