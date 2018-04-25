@@ -1,4 +1,4 @@
-### Möglichkeiten um Figuren zu machen
+### Ein paar Optionen für verschiedene Figuren
 
 Formen: "triangle" (Dreieck), "circle" (Kreis), "square" (Quadrat), "diamond" (Diamant), "star" (Stern)
 
@@ -6,7 +6,7 @@ Farben: "red" (Rot), "yellow" (Gelb), "blue" (Blau), "orange" (Orange), "green" 
 
 Musiknoten:  "c" (C), "c#" (Cis), "db" (Des), "d" (D), "d#" (Dis), "eb" (Es), "e" (E), "f" (F), "f#" (Fis), "gb" (Ges), "g" (G), "g#" (Gis), "ab" (As), "a" (A), "a#" (B), "bb" (B), "b" (H)
 
-Erniedrigte Töne werden mit "b" angegeben, erhöhte Töne mit "#". Die Notenbezeichnungen sind Englisch, also Vorsicht mit H und B!
+Erniedrigte Töne werden mit "b" angegeben, erhöhte Töne mit "#". Die Notenbezeichnungen sind Englisch, also Vorsicht mit H und B! (Wenn ihr ein H wollt, muesst ihr B angeben.)
 
 ### Hintergrund ändern
 
@@ -60,7 +60,7 @@ Um den Takt beim automatischen Abspielen zu verändern, setze die Variable `bpm`
 bpm = 300
 ```
 
-### Verändere wie die Töne klingen
+### Verändere, wie die Töne klingen
 
 Du kannst die Töne verändern, indem du `tones.type`, `tones.attack` und `tones.release` setzt.
 
@@ -84,9 +84,9 @@ tones.release = 100
 
 Wichtig: Wenn Du diese Werte setzt, beeinflussen sie alle zukünftig gespielten Noten. Das heißt dass Du diese Werte während die Musik spielt in der Konsole eingeben und so die Töne jederzeit verändern kannst. Frag Deine\*n Betreuer\*in um Hilfe!
 
-### Change how figures look
+### Ändere das Aussehen deiner Figuren!
 
-Try this:
+Versuch mal das hier:
 
 ```javascript
 myFigure = addFigure("star", "yellow", randomNote())
