@@ -83,3 +83,14 @@ tones.release = 100
 ```
 
 Wichtig: Wenn Du diese Werte setzt, beeinflussen sie alle zukünftig gespielten Noten. Das heißt dass Du diese Werte während die Musik spielt in der Konsole eingeben und so die Töne jederzeit verändern kannst. Frag Deine\*n Betreuer\*in um Hilfe!
+
+### Change how figures look
+
+Try this:
+
+```javascript
+myFigure = addFigure("star", "yellow", randomNote())
+myFigure.style.backgroundImage = "url('http://theophani.github.io/choose-your-own-instrument/swiss-cheese.jpg')"
+myFigure.style.width = "500px"
+myFigure.style.height = "500px"
+```
