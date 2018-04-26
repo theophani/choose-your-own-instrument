@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+      function addFigure (shape, color, note) {
+        var figure = document.createElement("div")
+        figure.className = shape + " " + color
+        figure.onmouseover = function () { playTone(note) }
+        document.body.appendChild(figure)
+        return figure
+      }
+
+    </script>
+    <title>Choose Your Own Instrument</title>
+  </head>
+  <body>
+  </body>
+  <script>
+
+    // backgrounds: "sky", "sea", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
+    // shapes: "triangle", "circle", "square", "diamond", "star"
+    // colors: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
+
+    document.body.style.backgroundImage = "url('https://img.alltoshop.de/17323_1000.jpg')"
+
+    
+	
+bpm = 150
+     addFigure("circle","black","c")
+	 addFigure("circle","black","d") 
+     addFigure("circle","black","e") 
+	 addFigure("circle","black","f")
+	 addFigure("circle","black","g")
+	 addFigure("circle","black","g")
+	 addFigure("circle","black","a")
+	 addFigure("circle","black","a")
+	 addFigure("circle","black","a")
+	 addFigure("circle","black","a") 
+	 addFigure("circle","black","g")
+	 addFigure("circle","black","a")
+	 addFigure("circle","black","a")
+	 addFigure("circle","black","a")
+	 addFigure("circle","black","a")
+	 addFigure("circle","black","g")
+	 addFigure("circle","black","f")
+	 addFigure("circle","black","f")
+	 addFigure("circle","black","f")
+	 addFigure("circle","black","f")
+	 addFigure("circle","black","e")
+	 addFigure("circle","black","e")
+	 addFigure("circle","black","d")
+	 addFigure("circle","black","d")
+	 addFigure("circle","black","d")
+	 addFigure("circle","black","d")
+	 addFigure("circle","black","c")
+    
+  </script>
+</html>
+

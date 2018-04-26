@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+      function addFigure (shape, color, note) {
+        var figure = document.createElement("div")
+        figure.className = shape + " " + color
+        figure.onmouseover = function () { playTone(note) }
+        document.body.appendChild(figure)
+        return figure
+      }
+
+    </script>
+    <title>Choose Your Own Instrument</title>
+  </head>
+  <body>
+	  <h1>2twin</h1>
+	  Willkommen!
+	  Sie sind auf der Exo-l Fanpage.
+	  Hier können Sie die BESTEN exo Bilder anschauen.!
+  </body>
+  <script>
+
+    // backgrounds: "sky", "sea", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
+    // shapes: "triangle", "circle", "square", "diamond", "star"
+    // colors: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
+
+    document.body.className = "sunset"
+	  
+	
+    /*var figure = document.createElement("div")
+    figure2.className = "star red"
+    figure2.onmouseover = function () { playTone("e") }
+    document.body.appendChild(figure2)
+	addFigure ("triangle","blue","a")
+addFigure ("diamond","purple","d")
+	addFigure ("","green","c")
+	for (i=0; i <17; i++) { addFigure("circle","red",150 + i *100)}
+	myFigure = addFigure("star","yellow", randomNote())
+  myFigure.style.backgroundImage="url('https://orig00.deviantart.net/655c/f/2015/163/3/d/exo_lmr_wallpaper_by_jaz1185-d8wz0ii.jpg')"*/
+  
+	var myFigure = addFigure("square","black", randomNote())
+  myFigure.style.backgroundImage="url('https://2.bp.blogspot.com/-vN0hKXIf_ow/VtGT7kpCfqI/AAAAAAAAAHY/ivXewnMxynw/s1600/EXO_1449192172_af_org.jpg')"
+  </script> 
+  </html> 
+  
+	

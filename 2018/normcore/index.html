@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+      function addFigure (shape, color, note) {
+        var figure = document.createElement("div")
+        figure.className = shape + " " + color
+        figure.onmouseover = function () { playTone(note) }
+        document.body.appendChild(figure)
+        return figure
+      }
+
+    </script>
+    <title>Choose Your Own Instrument</title>
+  </head>
+  <body>
+  </body>
+  <script>
+
+    // backgrounds: "sky", "sea", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
+    // shapes: "triangle", "circle", "square", "diamond", "star"
+    // colors: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
+
+    document.body.className = "sunset"
+
+    var figure1 = document.createElement("div")
+    figure1.className = "square red"
+    figure1.onmouseover = function () { playTone("g") }
+    document.body.appendChild(figure1)
+
+    var figure2 = document.createElement("div")
+    figure2.className = "square yellow"
+    figure2.onmouseover = function () { playTone("c") }
+    document.body.appendChild(figure2)
+
+addFigure ("tringle","purple","a")
+addFigure("circle","blue","f")
+addFigure("diamond","orange","c#")
+addFigure("star","black","d")
+	for(i=0; i<17; i++){
+		addFigure(randomShape(),randomColor(),150+i*100)
+	
+	}
+	for (var i = 0; i <16;i++){
+		addFigure("square","black",noteFormNumber(i))
+	}
+	
+	
+  </script>
+</html>

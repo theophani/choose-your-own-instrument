@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script src="script.js"></script>
+	<script>
+	function addFigure (shape, color, note) {
+	  var figure = document.createElement("div")
+	figure.className = shape + " " * color
+	figure.onmouseover = function () { playTone(note)}
+	document.body.appendChild(figure)
+	return figure} 
+	</script>
+    <title>Choose Your Own Instrument</title>
+  </head>
+  <body>
+	  <h1>HERZLICH WILLKOMMEN,NICE TO MEET YOU!,BUENOS DIAS,CIAO</h1>
+	 <p> Hier findest du verschiedene Dinge zum Thema Musik</p>
+  </body>
+  <script>
+
+    // backgrounds: "bubble-gum", "sunset", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
+    // shapes: "triangle", "circle", "square", "diamond", "star"
+    // colors: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
+
+
+	
+	f1=addFigure ("diamond", "back", "d")
+	addFigure ("diamond", "black", "e")
+	
+	for (i=0; i<1; i++) {
+		addFigure ("diamond", "black", 150+i*100)
+	}
+	
+	document.body.style.backgroundImage="url('https://vignette.wikia.nocookie.net/hi5tv/images/4/42/ITunes_logo_%282016-%29.png/revision/latest/scale-to-width-down/464?cb=20170827161041')"
+	
+	f1.style.backgroundImage="url(https://t4.ftcdn.net/jpg/00/37/54/63/500_F_37546350_VMK7Fjd30tjcv7voDKx3dYcXSuMIc5ey.jpg)"
+  </script>
+</html>

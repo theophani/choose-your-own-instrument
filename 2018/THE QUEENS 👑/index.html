@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+      function addFigure (shape, color, note) {
+        var figure = document.createElement("div")
+        figure.className = shape + " " + color
+        figure.onmouseover = function () { playTone(note) }
+        document.body.appendChild(figure)
+        return figure
+      }
+	  function addSpace(){
+	  	return document.createElement("div")
+	  }
+
+    </script>
+    <title>Choose Your Own Instrument</title>
+  </head>
+  <body>
+  </body>
+  <script>
+
+    // backgrounds: "sky", "sea", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
+    // shapes: "triangle", "circle", "square", "diamond", "star"
+    // colors: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
+
+    document.body.className = "sky"
+
+  
+	
+	for (i=0; i < 5; i++){
+		addFigure("diamond", "orange", "circle")
+	
+		myFigure = addFigure("circle" , "yellow", "a")
+		myFigure.style.backgroundImage = "url('https://i.pinimg.com/originals/49/83/74/498374267516c7c6ffd2051c23611da5.png')"
+	}
+	for (i=0; i < 5; i++){
+		addFigure("diamond", "yellow", "d")
+	
+	}
+	for (i=0; i < 5; i++){
+		f = addFigure("diamond", "blue", "e")
+		f.bpm = 1000
+	
+	}
+	for (i=0; i < 5; i++){
+		f = addFigure("diamond", "green", "f")
+		f.bpm = 2000
+	
+	}
+	for (i=0; i < 5; i++){
+		f = addFigure("diamond", "purple", "g")
+		f.bpm = 3000
+	
+	}
+	for (i=0; i < 5; i++){
+		f = addFigure("diamond", "pink", "a")
+		f.bpm = 4000
+	
+	}
+	addFigure("square", "black", "b")
+	for (i=0; i < 5; i++){
+		addSpace()
+	
+	}
+	for (i=0; i < 5; i++){
+		f = addFigure("diamond", "orange", "circle")
+		f.bpm = 1000000
+	    
+		myFigure = addFigure("circle" , "yellow", "a")
+		myFigure.style.backgroundImage = "url('https://i.pinimg.com/originals/49/83/74/498374267516c7c6ffd2051c23611da5.png')"
+	}
+
+	
+	
+
+	
+  </script>
+</html>
