@@ -132,3 +132,11 @@ function randomNote () {
 
   return allNotes[Math.floor(Math.random() * allNotes.length)];
 }
+
+function triggerMouseOver (e) {
+  if (e.target.onmouseover) {
+    e.target.onmouseover();
+  }
+}
+
+window.addEventListener('click', triggerMouseOver, false);
