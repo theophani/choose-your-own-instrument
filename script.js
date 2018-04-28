@@ -139,4 +139,16 @@ function triggerMouseOver (e) {
   }
 }
 
-window.addEventListener('touchstart', triggerMouseOver, false);
+window.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    triggerMouseOver(e)
+  }
+
+  if (e.touches.length === 2) {
+    autoPlayAll(60 * 1000 / bpm);
+  }
+
+  if (e.touches.length === 3) {
+    stopAutoPlayback();
+  }
+}, false);
