@@ -136,6 +136,7 @@ function randomNote () {
 function triggerMouseOver (e) {
   if (e.target.onmouseover) {
     e.target.onmouseover();
+    e.target.mouseout();
   }
 }
 
