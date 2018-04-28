@@ -139,4 +139,4 @@ function triggerMouseOver (e) {
   }
 }
 
-window.addEventListener('click', triggerMouseOver, false);
+window.addEventListener('touchstart', triggerMouseOver, false);
