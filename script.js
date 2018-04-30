@@ -165,4 +165,4 @@ window.addEventListener("load", function () {
     }
     document.body.appendChild(instructions)
 
-}, false)
+}, false);
