@@ -147,7 +147,7 @@ window.addEventListener("load", function () {
 
     var instructions = document.createElement("div");
     instructions.className = "instructions";
-    instructions.innerHTML = "<p>Tap the screen with two fingers to start playing sound. Tap with three to stop.</p><p>(First, tap to close this box.)</>"
+    instructions.innerHTML = "<p>Tap the screen with <strong>two fingers to start</strong> playing sound.<br><br>Tap with <strong>three fingers to stop</strong>.</>"
 
     instructions.ontouchstart = function () {
       playTone("c");

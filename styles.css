@@ -29,16 +29,22 @@ div:hover, div.auto-playing {
 @media (max-width: 1000px) {
   .instructions {
     display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 5em;
+    background-color: rgba(0, 0, 0, 0.25);
+    top: 0;
+    margin: 0;
+  }
+
+  .instructions p {
+    display: block;
     background-color: white;
     margin: 1em;
+    margin-top: 3em;
     padding: 1em;
-    width: 75%;
-    height: auto;
-    position: absolute;
-    font-size: 4em;
     border-radius: 10%;
-    top: 1em;
-    font-family: monospace;
   }
 }
 
