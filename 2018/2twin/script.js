@@ -133,7 +133,17 @@ function randomNote () {
   return allNotes[Math.floor(Math.random() * allNotes.length)];
 }
 
+function triggerMouseOver (e) {
+  if (e.target.onmouseover) {
+    e.target.onmouseover();
+  }
+}
+
 window.addEventListener("touchstart", function (e) {
+  if (e.touches.length === 1) {
+    triggerMouseOver(e)
+  }
+
   if (e.touches.length === 2) {
     autoPlayAll(60 * 1000 / bpm);
   }
@@ -156,4 +166,3 @@ window.addEventListener("load", function () {
     document.body.appendChild(instructions)
 
 }, false);
-
