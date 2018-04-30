@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   margin: 0;
   text-align: center;
+  position: relative;
 }
 
 div {
@@ -17,6 +18,28 @@ div {
 
 div:hover, div.auto-playing {
   background-color: white;
+}
+
+/* Instructions for mobile visitors */
+
+.instructions {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .instructions {
+    display: block;
+    background-color: white;
+    margin: 1em;
+    padding: 1em;
+    width: 75%;
+    height: auto;
+    position: absolute;
+    font-size: 4em;
+    border-radius: 10%;
+    top: 1em;
+    font-family: monospace;
+  }
 }
 
 /* Shapes */

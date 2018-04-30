@@ -152,3 +152,17 @@ window.addEventListener("touchstart", function (e) {
     stopAutoPlayback();
   }
 }, false);
+
+window.addEventListener("load", function () {
+
+    var instructions = document.createElement("div");
+    instructions.className = "instructions";
+    instructions.innerHTML = "<p>Tap the screen with two fingers to start playing sound. Tap with three to stop.</p><p>(First, tap to close this box.)</>"
+
+    instructions.ontouchstart = function () {
+      playTone("c");
+      document.body.removeChild(instructions);
+    }
+    document.body.appendChild(instructions)
+
+}, false)
