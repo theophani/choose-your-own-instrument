@@ -8,7 +8,7 @@ The static version is here: http://theophani.github.io/choose-your-own-instrumen
 
 If you don’t have `git` or don’t want to use it:
 
-Download the **raw** versions of [index.html](index.html), [styles.css](styles.css), and [tones.js](tones.js) files and put them in the same folder on your computer.
+Download the **raw** versions of [index.html](index.html), [styles.css](styles.css), [script.js](script.js), and [tones.js](tones.js) files and put them in the same folder on your computer.
 
 Or, using `git`:
 
