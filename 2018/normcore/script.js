@@ -155,7 +155,7 @@ window.addEventListener("touchstart", function (e) {
 
 window.addEventListener("load", function () {
 
-    var instructions = document.createElement("div");
+    var instructions = document.createElement("section");
     instructions.className = "instructions";
     instructions.innerHTML = "<p>Tap the screen with <strong>two fingers to start</strong> playing sound.<br><br>Tap with <strong>three fingers to stop</strong>.</>"
 
