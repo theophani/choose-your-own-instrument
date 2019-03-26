@@ -1,13 +1,21 @@
 (function(window) {
     var tones = {
-        context: new (window.AudioContext || window.webkitAudioContext)(),
+        context: null,
         attack: 1,
         release: 100,
         volume: 1,
         type: "sine",
 
+        init: function () {
+            if (!this.context) {
+              this.context = new (window.AudioContext || window.webkitAudioContext)()
+            }
+        },
 
         playFrequency: function(freq) {
+            if (!this.context) {
+              this.context = new (window.AudioContext || window.webkitAudioContext)()
+            }
             this.attack = this.attack || 1;
             this.release = this.release || 1;
             var envelope = this.context.createGain();
@@ -34,8 +42,8 @@
             osc.start();
         },
 
-        /** 
-         * Usage: 
+        /**
+         * Usage:
          * notes.play(440);     // plays 440 hz tone
          * notes.play("c");     // plays note c in default 4th octave
          * notes.play("c#");    // plays note c sharp in default 4th octave
@@ -98,7 +106,7 @@
             "bb": 58.27,
             "b": 61.735
         },
-        {                    
+        {
             // octave 2
             "c": 65.406,
             "c#": 69.296,
@@ -118,7 +126,7 @@
             "bb": 116.541,
             "b": 123.471
         },
-        {                    
+        {
             // octave 3
             "c": 130.813,
             "c#": 138.591,
@@ -138,7 +146,7 @@
             "bb": 233.082,
             "b": 246.942
         },
-        {                    
+        {
             // octave 4
             "c": 261.626,
             "c#": 277.183,
@@ -158,7 +166,7 @@
             "bb": 466.164,
             "b": 493.883
         },
-        {                    
+        {
             // octave 5
             "c": 523.251,
             "c#": 554.365,
@@ -178,7 +186,7 @@
             "bb": 932.328,
             "b": 987.767
         },
-        {                    
+        {
             // octave 6
             "c": 1046.502,
             "c#": 1108.731,
@@ -198,7 +206,7 @@
             "bb": 1864.655,
             "b": 1975.533
         },
-        {                    
+        {
             // octave 7
             "c": 2093.005,
             "c#": 2217.461,
@@ -218,7 +226,7 @@
             "bb": 3729.31,
             "b": 3951.066
         },
-        {                    
+        {
             // octave 8
             "c": 4186.009,
             "c#": 4434.922,
@@ -238,7 +246,7 @@
             "bb": 7458.62,
             "b": 7902.132
         },
-        {                    
+        {
             // octave 9
             "c": 8372.018,
             "c#": 8869.844,
@@ -261,7 +269,7 @@
     };
 
     // need to create a node in order to kick off the timer in Chrome.
-    tones.context.createGain();
+    //tones.context.createGain();
 
     if (typeof define === "function" && define.amd) {
         define(tones);
