@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+
+      html, body {
+        height: 100%;
+        padding: 1em;
+        margin: 0;
+        text-align: center;
+        position: relative;
+      }
+
+      div {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        display: inline-block;
+        cursor: pointer;
+        background-color: black;
+        background-size: cover;
+      }
+
+      .sky {
+        background: linear-gradient(to bottom,  #c2f4ff 0%, #0fbae8 100%);
+      }
+
+      /* Shapes */
+
+      .circle {
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+      }
+
+      .triangle {
+        -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      }
+
+      .diamond {
+        -webkit-clip-path: polygon(50% 0%, 85% 50%, 50% 100%, 15% 50%);
+        clip-path: polygon(50% 0%, 85% 50%, 50% 100%, 15% 50%);
+        height: 133px;
+        width: 133px;
+        margin: 0 3px;
+      }
+
+      .star {
+        -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      }
+
+      /* Background colours */
+
+      .red {
+        background-color: red;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .orange {
+        background-color: orange;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .purple {
+        background-color: purple;
+      }
+
+    </style>
+    <title>Choose Your Own Instrument</title>
+  </head>
+  <body class="sky">
+    <div class="star blue"></div>
+    <div class="red circle"></div>
+    <div class="green square"></div>
+    <div class="yellow square"></div>
+    <div class="triangle green"></div>
+    <br>
+    <div class="diamond yellow"></div>
+    <div class="circle blue"></div>
+    <div class="triangle red"></div>
+    <div class="square black"></div>
+    <div class="star purple"></div>
+    <br>
+    <div class="square purple"></div>
+    <div class="star blue"></div>
+    <div class="circle yellow"></div>
+    <div class="circle orange"></div>
+    <div class="diamond red"></div>
+    <br>
+    <div class="star orange"></div>
+    <div class="star green"></div>
+    <div class="square orange"></div>
+    <div class="triangle red"></div>
+    <div class="circle blue"></div>
+    <br>
+    <div class="star black"></div>
+    <div class="triangle red"></div>
+    <div class="diamond purple"></div>
+    <div class="circle blue"></div>
+    <div class="square square"></div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+      function addFigure (shape, color, note) {
+        var figure = document.createElement("div")
+        figure.className = shape + " " + color
+ 		  figure.style.backgroundImage = "url('https://www.collinsdictionary.com/images/thumb/jellyfish_388896304_250.jpg?version=3.1.191')"
+		  figure.style.height = "600px"
+		  figure.style.width = "600px"
+		  figure.innerText = "#TeamJellyfish"
+		  figure.style.color = "white"
+		  figure.style.textAlign = "center"
+		  figure.style.fontSize = "40px"
+		  		  figure.style.paddingTop = "40px"
+        figure.onmouseover = function () { playTone(note) }
+        document.body.appendChild(figure)
+        return figure
+      }
+
+      // A list of `style` properties and what they do:
+      // https://www.w3schools.com/jsref/dom_obj_style.asp
+
+    </script>
+    <title>Choose Your Own Instrument</title>
+  </head>
+  <body>
+  </body>
+  <script>
+
+    // backgrounds: "sky", "sea", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
+    // shapes: "triangle", "circle", "square", "diamond", "star"
+    // colors: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
+
+  document.body.style.backgroundImage = "url('https://images.pexels.com/photos/5412/water-blue-ocean.jpg?cs=srgb&dl=b-blau-meer-5412.jpg&fm=jpg')"
+	
+	addFigure ("circle", "red", "d")
+//	for (i=0;  i <1;  i++)  {  
+//		addFigure("circle","red",150 + i * 100)
+//	}
+	
+
+
+  </script>
+</html>

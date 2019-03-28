@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+      function addFigure (shape, color, note) {
+        var figure = document.createElement("div")
+        figure.className = shape + " " + color
+        figure.onmouseover = function () { playTone(note) }
+        document.body.appendChild(figure)
+        return figure
+      }
+
+      // A list of `style` properties and what they do:
+      // https://www.w3schools.com/jsref/dom_obj_style.asp
+
+    </script>
+	  <style>
+		  body {
+			  background-image: url("kamel.jpg");
+			  background-size: cover;
+		  }
+	  	
+		  </style>
+    <title>Choose Your Own Instrument</title>
+  </head>
+  <body>
+	<h1>  Willkommen </h1>
+  </body>
+  <script>
+
+    // backgrounds: "sky", "sea", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
+    // shapes: "triangle", "circle", "square", "diamond", "star"
+    // colors: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
+
+    // document.body.className = "sea"
+	  var hintergrund = document.body
+	  hintergrund.style.backgroundImage = "kamel.jpg"
+
+      var camel = document.createElement("div")
+      camel.className = "circle dark blue and light blue"
+      camel.onmouseover = function () { 
+		 // playTone(note) 
+		  var camelAudio = new Audio("camel5.mp3")
+		  camelAudio.play()
+	  }
+      document.body.appendChild(camel)
+	  
+	 
+
+  </script>
+</html>

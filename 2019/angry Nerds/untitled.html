@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+      function addFigure (shape, color, note) {
+        var figure = document.createElement("div")
+        figure.className = shape + " " + color
+        figure.onmouseover = function () { playTone(note) }
+        document.body.appendChild(figure)
+        return figure
+      }
+
+      // A list of `style` properties and what they do:
+      // https://www.w3schools.com/jsref/dom_obj_style.asp
+
+    </script>
+    <title>Choose Your Own Instrument</title>
+  </head>
+  <body>
+
+  <script>
+
+    // backgrounds: "sky", "sea", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
+    // shapes: "triangle", "circle", "square", "diamond", "star"
+    // colors: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
+
+    document.body.className = "bubble-gum"
+	  var entchen= ["d","m","e","m","f","m","g","m","a","m","m","a","m","m","b","m","b","m","b","m","b","m","a","m","m","g","m","g","m","g","m","g","m","f","m","m","f","m","m","a","m","a","m","a","m","a","m","d","m","m","m"] 
+	  for (i=0; i<entchen.length; i++) {
+		  addFigure ("diamond","yellow",entchen[i])
+		  
+	  }
+	 
+      
+	  
+	  
+  </script>
+  </body>
+</html>
+

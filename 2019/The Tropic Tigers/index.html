@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="tones.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+      function addFigure (shape, color, note) {
+        var figure = document.createElement("div")
+        figure.className = shape + " " + color
+        figure.onmouseover = function () { playTone(note) }
+        document.body.appendChild(figure)
+        return figure
+      }
+
+      // A list of `style` properties and what they do:
+      // https://www.w3schools.com/jsref/dom_obj_style.asp
+
+    </script>
+    <title>Choose Your Own Instrument</title>
+  </head> 
+  <body>
+	  
+  </body>
+  <script>
+
+    // backgrounds: "sky", "sea", "bubble-gum", "fireball", "sunset", "cool-mint", "fuji"
+    // shapes: "triangle", "circle", "square", "diamond", "star"
+    // colors: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
+
+    var myFigure = addFigure("circle" , "pink" , "a#")
+myFigure.style.backgroundImage =
+	  "url('https://i.pinimg.com/736x/b0/5c/fd/b05cfd1cd103f205443bd69efd3e13b6--arte-tropical-tropical-vibes.jpg')"
+	 myFigure.style.width = "500px"
+	  myFigure.style.height = "500px"
+	  
+	  var text = document.createElement("span")
+	text.innerText = "The Tropic Tigers"
+	  text.style.color = "pink"
+	 text.style.fontSize = "100px"
+	 text.style.marginTop = "130px" 
+	  text.style.display = "block"
+  myFigure.appendChild(text)
+	 
+	   
+
+  </script>
+</html>
