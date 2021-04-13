@@ -157,10 +157,10 @@ window.addEventListener("load", function () {
 
     let instructions = document.createElement("section");
     instructions.className = "instructions";
-    instructions.innerHTML = "<p>Click or tap to start</p>"
+    instructions.innerHTML = "<p>Klicken oder tippen Sie zum Starten</p>"
 
     if ('ontouchstart' in window) {
-      instructions.innerHTML += '<p class="mobile">Tap the screen with two fingers to start playing sound. Tap with three to stop.</p>'
+      instructions.innerHTML += '<p class="mobile">Tippen Sie mit zwei Fingern auf den Bildschirm, um die Tonwiedergabe zu starten. Tippen Sie mit drei, um zu stoppen.</p>'
     }
 
     instructions.onclick = function () {
