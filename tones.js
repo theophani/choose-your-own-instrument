@@ -1,5 +1,5 @@
 (function(window) {
-    var tones = {
+    const tones = {
         context: null,
         attack: 1,
         release: 100,
@@ -18,7 +18,7 @@
             }
             this.attack = this.attack || 1;
             this.release = this.release || 1;
-            var envelope = this.context.createGain();
+            let envelope = this.context.createGain();
             envelope.gain.setValueAtTime(this.volume, this.context.currentTime);
             envelope.connect(this.context.destination);
 
@@ -35,7 +35,7 @@
                 }, this.attack * 10 + this.release * 10);
             }
 
-            var osc = this.context.createOscillator();
+            let osc = this.context.createOscillator();
             osc.frequency.setValueAtTime(freq, this.context.currentTime);
             osc.type = this.type;
             osc.connect(envelope);
