@@ -157,7 +157,7 @@ window.addEventListener("load", function () {
 
     let instructions = document.createElement("section");
     instructions.className = "instructions";
-    instructions.innerHTML = "<p>Click or Touch with one finger to Start</p>"
+    instructions.innerHTML = "<p>Click or tap to start</p>"
 
     if ('ontouchstart' in window) {
       instructions.innerHTML += '<p class="mobile">Tap the screen with two fingers to start playing sound. Tap with three to stop.</p>'
