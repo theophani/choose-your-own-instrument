@@ -15,10 +15,10 @@ function playOne (element, delay, i) {
 }
 
 function autoPlayAll (delay) {
-  var elements = document.querySelectorAll('div');
+  const elements = document.querySelectorAll('div');
 
   function playAll () {
-    for (var i = 0; i < elements.length; i++) {
+    for (let i = 0; i < elements.length; i++) {
       playOne(elements[i], delay, i);
     }
   }
@@ -39,15 +39,15 @@ function autoPlayAll (delay) {
  * timeouts that are already over, which is does not throw an error.
  */
 function clearAllTimeouts () {
-  var nextTimeout = setTimeout(function(){}, 0);
-  for (var i = 1; i <= nextTimeout; i++) {
+  const nextTimeout = setTimeout(function(){}, 0);
+  for (let i = 1; i <= nextTimeout; i++) {
     clearTimeout(i);
   }
 }
 
 function resetClassNames () {
-  var elements = document.querySelectorAll('.auto-playing');
-  for (var i = 0; i < elements.length; i++) {
+  const elements = document.querySelectorAll('.auto-playing');
+  for (let i = 0; i < elements.length; i++) {
     elements[i].className = elements[i].className.replace(/ auto-playing/g, "");
   }
 }
@@ -71,34 +71,34 @@ document.addEventListener("keydown", function (e) {
 
 // bmp means “beats per minute”.
 // Sets the tempo of the autoplay.
-var bpm = 300;
+const bpm = 300;
 
 // The “type” determines the shape of the sound wave.
 // The available types are: "sine", "square", "sawtooth", "triangle"
-tones.type = "sine"
+tones.type = "sine";
 
 // The “attack” determines how intensely the sound starts.
 // Try other numbers to see how it smooths out the tone.
-tones.attack = 1
+tones.attack = 1;
 
 // The “release” determines how quickly the sound fades out.
 // Try other numbers to see how it creates clipped or echoey sounds.
-tones.release = 100
+tones.release = 100;
 
 // Takes an integer and returns a note in Hz.
 // Integers 0 though 7 are the notes on the C Major scale.
 function noteFromNumber (i) {
-  var centerOctave = 4;
-  var notes = ["c", "d", "e", "f", "g", "a", "b"];
-  var notesPerOctave = notes.length;
+  const centerOctave = 4;
+  const notes = ["c", "d", "e", "f", "g", "a", "b"];
+  const notesPerOctave = notes.length;
 
-  var j = i + (notesPerOctave * centerOctave);
-  var octave = Math.floor(j / notesPerOctave);
-  var note = notes[j % notesPerOctave];
+  const j = i + (notesPerOctave * centerOctave);
+  const octave = Math.floor(j / notesPerOctave);
+  const note = notes[j % notesPerOctave];
 
   // Only octaves 0 through 9 are supported
   if (octave < 0 || octave > 9) {
-    throw "The number " + i + " is outside of the supported range of the noteFromNumber function";
+    throw new Error("The number " + i + " is outside of the supported range of the noteFromNumber function");
   } else {
     return tones.map[octave][note];
   }
@@ -106,27 +106,27 @@ function noteFromNumber (i) {
 
 // Returns a random shape: "triangle", "circle", "square", "diamond", "star"
 function randomShape () {
-  var shapes = ["triangle", "circle", "square", "diamond", "star"];
-  var i = Math.floor(Math.random() * shapes.length);
+  const shapes = ["triangle", "circle", "square", "diamond", "star"];
+  const i = Math.floor(Math.random() * shapes.length);
   return shapes[i];
 }
 
 // Returns a random color: "red", "yellow", "blue", "orange", "green", "purple", "pink", "black"
 function randomColor () {
-  var colors = ["red", "yellow", "blue", "orange", "green", "purple", "pink", "black"];
-  var i = Math.floor(Math.random() * colors.length);
+  const colors = ["red", "yellow", "blue", "orange", "green", "purple", "pink", "black"];
+  const i = Math.floor(Math.random() * colors.length);
   return colors[i];
 }
 
 // Returns a random note from the audible range
 function randomNote () {
-  var audibleOctives = tones.map.slice(2, 8);
-  var octaves = audibleOctives.map(function (octave) {
+  const audibleOctives = tones.map.slice(2, 8);
+  const octaves = audibleOctives.map(function (octave) {
     return Object.keys(octave).map(function (key) {
       return octave[key];
     });
   });
-  var allNotes = octaves.reduce(function (notes, notesInOctave) {
+  const allNotes = octaves.reduce(function (notes, notesInOctave) {
     return notes.concat(notesInOctave);
   }, []);
 
@@ -155,12 +155,12 @@ window.addEventListener("touchstart", function (e) {
 
 window.addEventListener("load", function () {
 
-    var instructions = document.createElement("section");
+    let instructions = document.createElement("section");
     instructions.className = "instructions";
-    instructions.innerHTML = "<p>Click or Touch with one finger to Start</p>"
+    instructions.innerHTML = "<p>Klicken oder mit einem Finger tippen um zu starten</p>"
 
     if ('ontouchstart' in window) {
-      instructions.innerHTML += '<p class="mobile">Tap the screen with two fingers to start playing sound. Tap with three to stop.</p>'
+      instructions.innerHTML += '<p class="mobile">Tippe mit zwei Fingern auf den Bildschirm, um die Wiedergabe zu starten, mit drei Fingern, um sie zu stoppen.</p>'
     }
 
     instructions.onclick = function () {
